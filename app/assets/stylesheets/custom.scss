@@ -1,0 +1,62 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+/*    forms    */
+ input, textarea, select,  .uneditable-input {
+	border: 1px solid blue;
+	width: 70%;
+	margin-bottom: 15px;
+}
+
+#main{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-weight: 700;
+    font-family: "Lucida Sans";
+    font-size: 20px;
+}
+
+#main li a{
+    color: white;
+}
+
+#main .navbar-brand {
+    color: white;
+    font-size: 24px;
+}
+
+input {
+	height: auto;
+}
+
+
+.footer{
+    background-color: #1a252f;
+    
+}
+
+
+footer{
+    border-top: 1px solid grey;
+    padding-top: 3px; 
+    padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #2C3E50;
+  color: #fff;
+}
+
+footer small {
+    float: left; 
+}
+
+footer ul { 
+    float: right;
+    list-style: none; 
+}
+
+footer ul li {
+    float: left; 
+    margin-left: 15px;
+}
+

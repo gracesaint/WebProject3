@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %>Home</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class= "navbar navbar-expand-lg bg-secondary fixed-top text-uppercase navbar-inverse" id="main"> 
+    <div class="container">
+  <nav>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Bark! Dog Walking</a>
+        <%= link_to image_tag("BARK.jpg", :height => '60', :width => '60'), "https://www.rover.com/sit/graces43", id: "logo" %>
+  
+    <ul class= "nav navbar-nav ml-auto"> 
+      <li><%= link_to "Home", :controller => "controller1", :action => "home" %></li> 
+      <li><%= link_to "FAQ", :controller => "controller1", :action => "FAQ" %></li> 
+     <% if logged_in? %>
+       logged<li><%= link_to "Users", '#' %></li>
+       <li><%= link_to "FAQ", '#' %></li>
+       <li><%= link_to "Availabilities", '#' %></li>
+       <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+    </ul>
+      <% else %>
+      <li><%= link_to "Log In", login_path %></li>
+      <% end %>
+    </ul>
+  </nav> 
+    </div>
+  </header>
+  
+  <div class="container">
+      <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>">
+        <%= message %>
+      </div>
+      <% end %>
+      <% flash.clear %>
+    <%= yield %>
+  </div>
+  
+
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Location</h4>
+            <p class="lead mb-0">Carmel, Indiana</p>
+          </div>
+          <div class="col-md-4">
+            <h4 class="text-uppercase mb-4">About Bark! Dog Walking</h4>
+            <p class="lead mb-0">Dog Walking for my neighbors at my house in Carmel, Indiana</p>
+          </div>
+          <div class="col-md-4">
+            <h4 class="text-uppercase mb-4">Created By</h4>
+            <p class="lead mb-0">Grace Saint - December 2017</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+  
+</body>
+</html>
